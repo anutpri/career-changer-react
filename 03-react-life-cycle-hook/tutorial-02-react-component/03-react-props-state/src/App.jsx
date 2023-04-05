@@ -1,11 +1,18 @@
 import React from 'react';
 
 class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      // initial state
+    };
+    this.PropTemperature = 30;
+  }
   render() {
     return (
       <div id="app">
-        <Header />
-        <Content />
+        <Header temperature={this.PropTemperature} />
+        <Content temperature={this.PropTemperature}/>
         <Footer />
       </div>
     );
@@ -21,7 +28,7 @@ class Header extends React.Component {
     return (
       <header>
         <span>Turn on / off</span>
-        <p>Current Temperature: XXX</p>
+        <p>Current Temperature: {this.props.temperature}</p>
       </header>
     );
   }
@@ -33,7 +40,7 @@ class Content extends React.Component {
   render() {
     return (
       <main>
-        <Temperature />
+        <Temperature temperature={this.props.temperature}/>
       </main>
     );
   }
@@ -43,7 +50,7 @@ class Temperature extends React.Component {
   render() {
     return (
       <div id="temperature">
-        <span>____ Oc</span>
+        <span>{this.props.temperature} Oc</span>
       </div>
     );
   }
