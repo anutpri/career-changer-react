@@ -2,23 +2,23 @@ import React, { useState } from 'react';
 
 function App() {
 
-    const [name, setname] = useState()
-    const [bio, setbio] = useState()
+    const [name, setName] = useState()
+    const [bio, setBio] = useState()
 
     // const handleInputChange = (event) => {
-    //     setname(event.target.value);
+    //     setName(event.target.value);
        
     //   };
 
     const handleInputChangeBio = (event) => {
-        setbio(event.target.value);
+        setBio(event.target.value);
       };
 
     return (
       <div id="app">
       <img width={200} src="https://images.unsplash.com/photo-1608643072426-a34159d0a762?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=874&q=80" alt="Sleepy Cat"/>
       <br></br>
-      <input type="text" id="name" name="name" placeholder='Type new name here' onChange={(event) => { setname(event.target.value)}}/> 
+      <input type="text" id="name" name="name" placeholder='Type new name here' onChange={(event) => { setName(event.target.value)}}/> 
       <input type="text" id="bio" name="bio" placeholder='Type new bio here' onChange={handleInputChangeBio}/> 
         <Info nameValue = {name} bioValue = {bio}/>
         <Social />
