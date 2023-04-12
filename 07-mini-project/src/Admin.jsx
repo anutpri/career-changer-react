@@ -22,6 +22,7 @@ const Admin = () => {
         <div>
             {/* this is example of mapping array of object to html. */}
             {[{username: 'hello'}].map(item => <div>{item.username}</div>)}
+            <h1>THIS IS ADMIN PAGE</h1>
         </div>
     )
 }

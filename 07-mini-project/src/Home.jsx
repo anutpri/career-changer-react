@@ -18,7 +18,7 @@ const Home = () => {
 
 
     // You have to add condition here according to role.
-    if (role === '?????') {
+    if (role === 'admin') {
         return (
             <Layout>
                 <Admin />

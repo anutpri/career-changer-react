@@ -10,13 +10,24 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import UserContext from './UserContext';
-import Signup from './Signup'
+import Signup from './Signup';
+
+
 
 const router = createBrowserRouter([
   {
     path: '/',
     element: <Home />
   },
+  {
+    path: '/Signup',
+    element: <Signup />
+  },
+  {
+    path: '/Login',
+    element: <Login />
+  },
+ 
 ])
 
 ReactDOM.createRoot(document.getElementById('root')).render(
