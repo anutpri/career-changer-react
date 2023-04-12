@@ -12,10 +12,16 @@ const Home = () => {
     // 'other' is who didn't login.
     const { getUserRole } = useContext(Context)
     // example of getUserRole.
-    // const _role = getUserRole()
+    const InitApp = () => {
+        const userRole = getUserRole()
+        setRole(userRole)
+    }
+   
     // return type is always string.
     const [role, setRole] = useState()
 
+    useEffect(InitApp, [])
+    
 
     // You have to add condition here according to role.
     if (role === 'admin') {
@@ -33,6 +39,10 @@ const Home = () => {
     )
 
 }
+
+
+
+
 
 export default Home
 
