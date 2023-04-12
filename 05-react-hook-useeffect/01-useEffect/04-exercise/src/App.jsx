@@ -7,10 +7,10 @@ function App() {
   const [organization, setOrganization] = useState();
   const [position, setPosition] = useState();
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    // Do something?
-  }
+  // const handleSubmit = (event) => {
+  //   event.preventDefault();
+  //   // Do something?
+  // }
 
   const handleInputChangeName = (event) => {
     setName(event.target.value);
@@ -24,27 +24,28 @@ function App() {
     setName(event.target.value);
   };
 
+  const addUser = () => {
+    
+  }
 
-  const user1 = {
+  const user = [{
     name: 'John',
     organization: 'ABC Inc.',
     position: 'Developer'
-  };
-
-  const user2 = {
+  },
+  {
     name: 'Jane',
     organization: 'XYZ Corp.',
     position: 'Designer'
-  };
-
-  const user3 = {
+  },
+  {
     name: 'Bob',
     organization: '123 LLC',
     position: 'Manager'
-  };
-
-  const arrayUsers = [user1, user2, user3];
+  }];
   
+
+
   const printUser = (item) => {
     return (
           <tr>
@@ -61,7 +62,7 @@ function App() {
         <input type="text" placeholder="Type new name here" style={{margin: '4px'}} onChange={handleInputChangeName} />
         <input type="text" placeholder="Type new organization here" style={{margin: '4px'}} onChange={handleInputChangeOrganization} />
         <input type="text" placeholder="Type new position here" style={{margin: '4px'}} onChange={handleInputChangePosition} />
-        <button type="submit" style={{margin: '4px'}}>Save</button>
+        <button type="submit" style={{margin: '4px'}} onClick={}>Save</button>
         </form>
 
       <table>
@@ -73,7 +74,7 @@ function App() {
           </tr>
         </thead>
         <tbody>
-          {arrayUsers.map(printUser)}
+          {user.map(printUser)}
         </tbody>
       </table>
     </div>
