@@ -11,7 +11,8 @@ const Home = () => {
     // user role is 'user'
     // 'other' is who didn't login.
     const { getUserRole } = useContext(Context)
-    // example of getUserRole.
+    // example of getUserRole
+    console.log(getUserRole)
     const InitApp = () => {
         const userRole = getUserRole()
         setRole(userRole)
@@ -20,7 +21,7 @@ const Home = () => {
     // return type is always string.
     const [role, setRole] = useState()
 
-    useEffect(InitApp, [])
+    useEffect(InitApp, [role])
     
 
     // You have to add condition here according to role.
