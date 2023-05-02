@@ -21,7 +21,7 @@ webServer.get("/company", (request, response) => {
 webServer.post("/company", (request, response) => {
   const companyId = company.length +1;
   const name = request.body.name;
-  const taxId = request.body.taxId;
+  const taxId = `tax-${request.body.taxId}`;
   const employees = [];
   
   company.push({ companyId, name, taxId, employees });
