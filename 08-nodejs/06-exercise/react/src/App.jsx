@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { getUser, createUser } from "./api/users";
+import { getCompanies, createCompanies } from "./api/company";
 
 function App() {
   const [companies, setCompanies] = useState([]);
@@ -8,20 +8,21 @@ function App() {
   const [load, toggleReload] = useState(false);
 
   useEffect(() => {
-    const getUsers = async () => {
-      const companies = await getUser();
+    const getCompany = async () => {
+      const companies = await getCompanies();
       setCompanies(companies);
+      
     };
 
-    getUsers();
+    getCompany();
   }, [load]);
 
   const save = async () => {
-    const newUser = {
+    const newCompany = {
       name,
       taxId,
     };
-    await createUser(newUser);
+    await createCompanies(newCompany);
     toggleReload(!load);
   };
 
